@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_ingredients_ignredient_categories",
+  "info": {
+    "displayName": "IngredientCategory",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "ingredients": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ingredients.ingredient"
+    }
+  }
+}

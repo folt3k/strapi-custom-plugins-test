@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_ingredients_ingredients",
+  "info": {
+    "displayName": "Ingredient",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
