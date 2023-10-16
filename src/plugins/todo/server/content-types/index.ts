@@ -1,7 +1,5 @@
-import schema from './todo/schema.json';
+import todo from './todo';
 
 export default {
-  'todo': {
-    schema
-  }
+  todo
 };

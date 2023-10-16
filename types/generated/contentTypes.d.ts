@@ -384,6 +384,14 @@ export interface PluginTodoTodo extends Schema.CollectionType {
     draftAndPublish: false;
     comment: "";
   };
+  pluginOptions: {
+    "content-manager": {
+      visible: true;
+    };
+    "content-type-builder": {
+      visible: true;
+    };
+  };
   attributes: {
     name: Attribute.String;
     isDone: Attribute.Boolean;
