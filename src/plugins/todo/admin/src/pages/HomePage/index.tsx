@@ -9,15 +9,16 @@ import {
   Layout,
   BaseHeaderLayout,
   ContentLayout,
-  Typography,
   EmptyStateLayout,
   Button,
 } from "@strapi/design-system";
 import { Plus } from "@strapi/icons";
-import pluginId from "../../pluginId";
+import AddModal from "../../components/AddModal";
+import TodoCount from "../../components/Count";
+import TodoTable from "../../components/List";
 
 const HomePage = () => {
-  const [todos, setTodo] = useState([]);
+  const [todos, setTodo] = useState([{id: 1, name: 'Umyć naczynia', isDone: true}]);
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -25,7 +26,16 @@ const HomePage = () => {
       <BaseHeaderLayout title="Todo Plugin" subtitle="All your toods in one place" as="h2"></BaseHeaderLayout>
       <ContentLayout>
         {!!todos.length ? (
-          <Typography>table</Typography>
+          <>
+            <TodoCount count={todos.length} />
+            <TodoTable
+              todoData={todos}
+              setShowModal={setShowModal}
+              toggleTodo={() => {}}
+              deleteTodo={() => {}}
+              editTodo={() => {}}
+            />
+          </>
         ) : (
           <EmptyStateLayout
             content="You don't have any todos yet.."
@@ -43,6 +53,7 @@ const HomePage = () => {
           ></EmptyStateLayout>
         )}
       </ContentLayout>
+      {showModal && <AddModal setShowModal={setShowModal} addTodo={() => {}} />}
     </Layout>
   );
 };
