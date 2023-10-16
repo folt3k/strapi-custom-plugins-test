@@ -1,5 +1,7 @@
-import todo from "./todo";
+import schema from './todo/schema.json';
 
-console.log(todo)
-
-export default { todo };
+export default {
+  'todo': {
+    schema
+  }
+};
