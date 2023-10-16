@@ -3,7 +3,9 @@
 
   "compilerOptions": {
     "target": "ESNext",
-    "strict": true
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true
   },
 
   "include": ["admin", "custom.d.ts"],
