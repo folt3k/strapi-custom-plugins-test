@@ -107,7 +107,9 @@ export default function TodoTable({ todoData, toggleTodo, deleteTodo, editTodo, 
                   <TodoCheckbox
                     value={todo.isDone}
                     checkboxID={todo.id}
-                    callback={toggleTodo}
+                    callback={({ id }) => {
+                      toggleTodo(id);
+                    }}
                     disabled={isEdit}
                   />
                 </Td>
