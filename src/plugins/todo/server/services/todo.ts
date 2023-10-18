@@ -1,7 +1,7 @@
-/**
- *  service
- */
+import { Strapi } from "@strapi/strapi";
 
-import { factories } from '@strapi/strapi';
-
-export default factories.createCoreService('plugin::todo.todo');
+export default ({ strapi }: { strapi: Strapi }) => ({
+  async find(query) {
+    return await strapi.entityService.findMany("plugin::todo.todo", query);
+  },
+});

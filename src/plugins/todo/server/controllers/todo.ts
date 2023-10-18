@@ -2,6 +2,10 @@
  *  controller
  */
 
-import { factories } from '@strapi/strapi'
+import { Strapi } from "@strapi/strapi";
 
-export default factories.createCoreController('plugin::todo.todo');
+export default ({ strapi }: { strapi: Strapi }) => ({
+  find(ctx) {
+    return strapi.plugin("todo").service("todo").find(ctx.query);
+  },
+});

@@ -20,10 +20,12 @@
   },
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "isDone": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     }
   }
 }

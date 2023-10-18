@@ -393,8 +393,8 @@ export interface PluginTodoTodo extends Schema.CollectionType {
     };
   };
   attributes: {
-    name: Attribute.String;
-    isDone: Attribute.Boolean;
+    name: Attribute.String & Attribute.Required;
+    isDone: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<"plugin::todo.todo", "oneToOne", "admin::user"> & Attribute.Private;

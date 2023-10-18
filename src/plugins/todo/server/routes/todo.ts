@@ -1,7 +1,14 @@
-/**
- *  router
- */
-
-import { factories } from '@strapi/strapi';
-
-export default factories.createCoreRouter('plugin::todo.todo');
+export default {
+  type: "admin",
+  routes: [
+    {
+      method: "GET",
+      path: "/find",
+      handler: "todo.find",
+      config: {
+        policies: [],
+        auth: false,
+      },
+    },
+  ],
+};
