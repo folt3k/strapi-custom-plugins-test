@@ -20,7 +20,7 @@ export default ({ strapi }: { strapi: Strapi }) => ({
   async toggle(id) {
     const result = await strapi.entityService.findOne("plugin::todo.todo", id);
     return await strapi.entityService.update("plugin::todo.todo", id, {
-      data: { isDone: !result.isDone },
+      data: { isDone: !result.isDone } as any //TODO: should be fixed,
     });
   },
 });
